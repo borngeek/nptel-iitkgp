@@ -1,0 +1,19 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine on
+	RewriteRule ^/?DisplayVideo/([a-zA-Z0-9]+)/([a-zA-Z0-9]+)$ displayVideo.php?a=$1&b=$2
+	RewriteRule ^/?([a-zA-Z0-9]+)/([a-zA-Z0-9]+)/([a-zA-Z0-9]+)$ index.php?a=$1&b=$2&c=$3
+</IfModule>
+
+<Files ~ "\.json">
+Order allow,deny
+Deny from all
+</Files>
+
+<Files ~ "\.mp4">
+Order allow,deny
+Deny from all
+</Files>
+
+ErrorDocument 404 /nptel/error.php?status=404
+ErrorDocument 500 /nptel/error.php?status=500
+ErrorDocument 403 /nptel/error.php?status=403
