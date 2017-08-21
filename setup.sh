@@ -9,6 +9,19 @@ echo " |_| \_|_|    |_| |_____|_____|         |_|_|\__|_|\_\__, | .__/ "
 echo "                                                     |___/|_|    "
 DIR="$(pwd)"
 
+echo -n "Probing storage devices ... "
+lsblk --nodeps | grep disk | awk -F"    " '{print $1}'
+fdisk -l 
+echo "done"
+
+echo -n "Creating mount points ... "
+fdisk -l
+echo "done"
+
+echo -n "Mounting all external storage devices ... "
+sudo mount -t vfat -o umask=022,gid=achackr,uid=achackr /dev/sdb1 /media/pendrv
+echo "done"
+
 echo -n "Creating Directory ... "
 #sudo mkdir -P /var/www/html
 echo "done"

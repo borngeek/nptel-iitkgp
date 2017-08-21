@@ -1,15 +1,12 @@
 <IfModule mod_rewrite.c>
 	RewriteEngine on
-	RewriteRule ^/?DisplayVideo/([a-zA-Z0-9]+)/([a-zA-Z0-9]+)$ displayVideo.php?a=$1&b=$2
+	Options +FollowSymLinks
+	RewriteRule ^/?DisplayVideo/([a-zA-Z0-9]+)/([a-zA-Z0-9]+)$ displayVideo.php?subjId=$1&lecId=$2
 	RewriteRule ^/?([a-zA-Z0-9]+)/([a-zA-Z0-9]+)/([a-zA-Z0-9]+)$ index.php?a=$1&b=$2&c=$3
+	RewriteCond %{REQUEST_FILENAME} !-l
 </IfModule>
 
 <Files ~ "\.json">
-Order allow,deny
-Deny from all
-</Files>
-
-<Files ~ "\.mp4">
 Order allow,deny
 Deny from all
 </Files>

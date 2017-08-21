@@ -1,17 +1,17 @@
 <?php
-  $lecData = file_get_contents ('dbLectureList1.json');
+  $lecData = file_get_contents ('json_db/dbLectureList1.json');
   $lecJson = json_decode($lecData, true);
   foreach ( $lecJson as $lec ){
-    if($lec["id"] == $_GET['b'] && $lec["subjId"] == $_GET['a']){break;}
+    if($lec["id"] == $_GET['lecId'] && $lec["subjId"] == $_GET['subjId']){break;}
   }
   
-  $subData = file_get_contents ('dbSubjectList1.json');
+  $subData = file_get_contents ('json_db/dbSubjectList1.json');
   $subJson = json_decode($subData, true);
   foreach ( $subJson as $sub ){
-    if($sub["id"] == $_GET['a']){break;}
+    if($sub["id"] == $_GET['subjId']){break;}
   }
   
-  $dscData = file_get_contents ('dbDisciplineList1.json');
+  $dscData = file_get_contents ('json_db/dbDisciplineList1.json');
   $dscJson = json_decode($dscData, true);
   foreach ( $dscJson as $dsc ){
     if($dsc["id"] == $sub["dscId"]){break;}
@@ -50,6 +50,9 @@
     margin: 0px !important;
     line-height: 20pt;
   }
+  #header .heading h6{
+    border-top: 1px #000 solid;
+  }
   .video{
     margin-top: 65px;
     text-align: center;
@@ -68,7 +71,7 @@
   </div>
   <div class="video">
    <video width="650" height="500" controls>
-    <source id="src" src="/nptel/videos/<?= $_GET['a']."/".$_GET['b'] ?>.mp4" type="video/mp4">
+    <source id="src" src="/nptel/videos/<?= $_GET['subjId']."/".$_GET['lecId'] ?>.mp4" type="video/mp4">
      Your browser does not support the video tag.
    </video>
   </div>
