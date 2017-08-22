@@ -9,7 +9,7 @@ This repository contains basic files and instruction for NPTEL HDD setup.
  ├ index.php  
  ├ DisplayVideo.php  
  ├ [DIR] videos  
- ├ [DIR] json_db 
+ ├ [DIR] json_db  
      ┬  
      ├ dbDisciplineList1.json [discipline_id, discipline_name]  
      ├ dbSubjectList1.json [subject_id, discipline_id, type, org, subject_name, [coordinator_1,coordinator_2,...]]  
@@ -18,7 +18,7 @@ This repository contains basic files and instruction for NPTEL HDD setup.
 /MEDIA/DISK-N\*\*  
  ┬  
  ├ [DIR] videos  
- ├ [DIR] json_db 
+ ├ [DIR] json_db  
      ┬  
      ├ dbDisciplineListN.json [discipline_id, discipline_name]  
      ├ dbSubjectListN.json [subject_id, discipline_id, type, org, subject_name, [coordinator_1,coordinator_2,...]]  

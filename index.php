@@ -25,12 +25,13 @@ if(!isset($_GET["dscId"])){
         $subjArray = array_merge($subjArray, json_decode(file_get_contents ("json_db/".$mSl[0]), true));
 //      }elseif(preg_match("/dbLectureList[0-9]*\.json/", $filename, $mLl)){
 //        $lecArray = array_merge($lecArray, json_decode(file_get_contents ("json_db/".$mLl[0]), true));
-	  }
+    }
     }
     foreach ( $subjArray as $subj ){
-      if ($subj["dscId"] === $dsc["id"]){
-		echo ("<a href='DisplayVideo/".$subj["id"]."'>".$subj["subjName"]."</a><br>");
-	  }
+      //var_dump($subjArray); exit;
+      if ($subj[1] === $dsc["id"]){
+        echo ("<a href='DisplayVideo/".$subj[0]."'>".$subj[4]."</a><br>");
+    }
     }
   }
 }

@@ -1,20 +1,23 @@
 <?php
-  $lecData = file_get_contents ('json_db/dbLectureList1.json');
-  $lecJson = json_decode($lecData, true);
-  foreach ( $lecJson as $lec ){
-    if($lec["id"] == $_GET['lecId'] && $lec["subjId"] == $_GET['subjId']){break;}
+  $lecJson = file_get_contents ('json_db/dbLectureList1.json');
+  $lecData = json_decode($lecJson, true);
+  foreach ( $lecData as $lec ){
+    if(isset($_GET['lecId'])){
+      if($lec[0] == $_GET['lecId'] && $lec[1] == $_GET['subjId']){break;}
+    }elseif(!isset($_GET['lecId'])){
+      if($lec[1] == $_GET['subjId']){break;}
+    }
   }
-  
   $subData = file_get_contents ('json_db/dbSubjectList1.json');
   $subJson = json_decode($subData, true);
   foreach ( $subJson as $sub ){
-    if($sub["id"] == $_GET['subjId']){break;}
+    if($sub[0] == $_GET['subjId']){break;}
   }
   
   $dscData = file_get_contents ('json_db/dbDisciplineList1.json');
   $dscJson = json_decode($dscData, true);
   foreach ( $dscJson as $dsc ){
-    if($dsc["id"] == $sub["dscId"]){break;}
+    if($dsc["id"] == $sub[1]){break;}
   }
   ?>
 <!DOCTYPE html>
@@ -64,14 +67,14 @@
    <div id="header">
     <img src="/nptel/img/banner500x100.png">
     <div class="heading">
-		<h4><?php echo $lec["name"]; ?></h4>
-		<h6><?php echo $dsc["Name"]." > ".$sub["subjName"]; ?></h6>
+		<h4><?php echo $lec[2]; ?></h4>
+		<h6><?php echo $dsc["Name"]." > ".$sub[4]; ?></h6>
     </div>
    </div>
   </div>
   <div class="video">
    <video width="650" height="500" controls>
-    <source id="src" src="/nptel/videos/<?= $_GET['subjId']."/".$_GET['lecId'] ?>.mp4" type="video/mp4">
+    <source id="src" src="/nptel/videos/<?= $_GET['subjId']."/".$lec[0] ?>.mp4" type="video/mp4">
      Your browser does not support the video tag.
    </video>
   </div>

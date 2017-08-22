@@ -1,12 +1,12 @@
 [
-	{"id":"lec01","subjId":"122106028","name":"Introduction to Chemistry &amp; Quantum Chemical Mechanics"},
-	{"id":"lec02","subjId":"122106028","name":"Particle in a box (one and two dimensions)"},
-	{"id":"lec03","subjId":"122106028","name":"Particle in a box (One and Two Dimensions) contd"},
-	{"id":"lec04","subjId":"122106028","name":"Harmonic Oscillator and Molecular Vibration"},
-	{"id":"lec05","subjId":"122106028","name":"Harmonic Oscillator (Continued)"},
-	{"id":"lec06","subjId":"122106028","name":"Hydrogen Atom - Radial Solution"},
-	{"id":"lec07","subjId":"122106028","name":"Hydrogen Atom Part III Angular Solutions"},
-	{"id":"lec08","subjId":"122106028","name":"Hydrogen Atom - Angular Solutions (Continued)"},
-	{"id":"lec09","subjId":"122106028","name":"Hydrogen Atom - Angular Solutions (Continued)"},
-	{"id":"lec10","subjId":"122106028","name":"Oppenheimer Approximation and Superposition"}
+	["lec01","122106028","Introduction to Chemistry &amp; Quantum Chemical Mechanics"],
+	["lec02","122106028","Particle in a box (one and two dimensions)"],
+	["lec03","122106028","Particle in a box (One and Two Dimensions) contd"],
+	["lec04","122106028","Harmonic Oscillator and Molecular Vibration"],
+	["lec05","122106028","Harmonic Oscillator (Continued)"],
+	["lec06","122106028","Hydrogen Atom - Radial Solution"],
+	["lec07","122106028","Hydrogen Atom Part III Angular Solutions"],
+	["lec08","122106028","Hydrogen Atom - Angular Solutions (Continued)"],
+	["lec09","122106028","Hydrogen Atom - Angular Solutions (Continued)"],
+	["lec10","122106028","Oppenheimer Approximation and Superposition"]
 ]
