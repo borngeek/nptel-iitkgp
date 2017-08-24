@@ -11,11 +11,11 @@ This repository contains basic files and instruction for NPTEL HDD setup.
  ├ [DIR] videos  
  ├ [DIR] json_db  
      ┬  
-     ├ dbDisciplineList.json \* [discipline_id, discipline_name]  
+     ├ dbDisciplineList.json * [discipline_id, discipline_name]  
      ├ dbSubjectList1.json [subject_id, discipline_id, type, org, subject_name, [coordinator_1,coordinator_2,...]]  
      └ dbLectureList1.json [subject_id, lecture_id, title]  
   
-/MEDIA/DISK-N\*\*  
+/MEDIA/DISK-N **  
  ┬  
  ├ [DIR] videos  
  ├ [DIR] json_db  
