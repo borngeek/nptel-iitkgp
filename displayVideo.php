@@ -118,7 +118,12 @@
     <img src="/nptel/img/banner500x100.png">
     <div class="heading">
 		<h4><?php echo $lec[2]; ?></h4>
-		<h6><?php echo $dsc["Name"]." > ".$sub[4]; ?></h6>
+		<h6>
+			<?php 
+			echo "<a href=\"/nptel/\">Home</a> &gt;&gt; 
+			<a href=\"/nptel/".$dsc["id"]."\">".$dsc["Name"]."</a> &gt;&gt; 
+			<a href=\"/nptel/DisplayVideo/".$sub[0].">".$sub[4]."</a></h6>";
+			?>
     </div>
     <div class="college-name">
 		ABC Institute of Technology
