@@ -78,7 +78,7 @@ if(!isset($_GET["dscId"])){
     margin-top: 65px;
     min-width: 480px;
   }
-  .main-panel .discp{
+  .main-panel .discp,.course{
     border: 1px #000 solid;
     display: inline-grid;
     min-width: 145px;
@@ -105,7 +105,7 @@ if(!isset($_GET["dscId"])){
     clip: rect(0px,60px,200px,0px);
     overflow:hidden;
   }
-  .main-panel .discp .text{
+  .main-panel .discp,.course .text{
     padding: 5px;
     padding-top: 0px;
     min-width: 130px;
@@ -141,7 +141,10 @@ if(!isset($_GET["dscId"])){
           foreach ( $subjArray as $subj ){
             //var_dump($subjArray); exit;
             if ($subj[1] === $dsc["id"]){
-              echo ("<a href='DisplayVideo/".$subj[0]."'>".$subj[4]."</a><br>");
+              $str = "<a href='DisplayVideo/".$subj[0]."' class='course'><div class='text'>".$subj[0]."<br>".$subj[4]."</div><div class='text' style='vertical-align:bottom'>".$subj[3]."<br>";
+              foreach($subj[5] as $l){$str .= $l.', ';}
+              $str = rtrim($str, ", ");
+              echo $str."</div></a>";
             }
           }
         }
