@@ -3,9 +3,9 @@
   $lecData = json_decode($lecJson, true);
   foreach ( $lecData as $lec ){
     if(isset($_GET['lecId'])){
-      if($lec[0] == $_GET['lecId'] && $lec[1] == $_GET['subjId']){break;}
+      if($lec[1] == $_GET['lecId'] && $lec[0] == $_GET['subjId']){break;}
     }elseif(!isset($_GET['lecId'])){
-      if($lec[1] == $_GET['subjId']){break;}
+      if($lec[0] == $_GET['subjId']){break;}
     }
   }
   $subData = file_get_contents ('json_db/dbSubjectList1.json');
@@ -52,13 +52,63 @@
   #header .heading h4,h6{
     margin: 0px !important;
     line-height: 20pt;
+    max-width: 500px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
   }
   #header .heading h6{
     border-top: 1px #000 solid;
   }
-  .video{
+  #header .college-name{
+    display: inline-block;
+    height: 45px;
+    font-size: 9pt;
+    line-height: 45px;
+    vertical-align: middle;
+    padding-right: 10px;
+    padding-left: 10px;
+    float:right;
+    font-style:italic;
+    border: 1px dashed #000;
+    background-color: aqua;
+	border-radius: 5px;
+  }
+  .video-page-main-panel{
     margin-top: 65px;
-    text-align: center;
+  }
+  .video-page-main-panel .lecture-list{
+    width: calc(35vw);
+    display: inline-block;
+    vertical-align: top;
+    list-style: none;
+    padding-left:0px;
+    margin: 0px;
+    font-size: 9pt;
+    height: calc(80vh);
+    overflow-y: scroll;
+  }
+  .video-page-main-panel .lecture-list li{
+    height: 24px;
+    padding: 5px;
+    background-color: #a90909;
+    border-color: #fff;
+    color: #fff;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+  }
+  .video-page-main-panel .lecture-list li a{
+    color: #fff;
+    text-decoration: none;
+    line-height: 40px;
+	vertical-align: middle;
+    padding: 10px;
+  }
+  .video-page-main-panel video{
+	width: calc(60vw);
+	display: inline-block;
+	height: calc(80vh);
   }
   </style>
  </head>
@@ -70,11 +120,23 @@
 		<h4><?php echo $lec[2]; ?></h4>
 		<h6><?php echo $dsc["Name"]." > ".$sub[4]; ?></h6>
     </div>
+    <div class="college-name">
+		ABC Institute of Technology
+	</div>
    </div>
   </div>
-  <div class="video">
+  <div class="video-page-main-panel">
+   <ul class="lecture-list">
+     <?php
+     foreach ( $lecData as $lect ){
+		if($lect[0] == $_GET['subjId']){
+		  echo "<li title=".$lect[2]."><a href=\"DisplayVideo/".$lect[0]."/".$lect[1]."\">".$lect[2]."</li>";
+		}
+	  }
+     ?>
+   </ul> 
    <video width="650" height="500" controls>
-    <source id="src" src="/nptel/videos/<?= $_GET['subjId']."/".$lec[0] ?>.mp4" type="video/mp4">
+    <source id="src" src="/nptel/videos/<?= $_GET['subjId']."/".$lec[1] ?>.mp4" type="video/mp4">
      Your browser does not support the video tag.
    </video>
   </div>
