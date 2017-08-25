@@ -33,6 +33,7 @@ if(!isset($_GET["dscId"])){
 <html>
  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link href="/nptel/img/favicon.ico" rel="shortcut icon">
   <title><?php 
         if($action === "showmainpage"){echo "NPTEL: Discipline List";}
         elseif ($action == "showsubjectpage"){echo "NPTEL: Subject List";}
