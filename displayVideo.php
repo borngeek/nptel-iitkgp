@@ -130,7 +130,7 @@
      <?php
      foreach ( $lecData as $lect ){
 		if($lect[0] == $_GET['subjId']){
-		  echo "<li title=".$lect[2]."><a href=\"DisplayVideo/".$lect[0]."/".$lect[1]."\">".$lect[2]."</li>";
+		  echo "<li title=".$lect[2]."><a href=\"".$lect[0]."/".$lect[1]."\">".$lect[2]."</li>";
 		}
 	  }
      ?>
