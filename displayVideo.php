@@ -131,10 +131,10 @@
   </div>
   <div class="video-page-main-panel">
    <ul class="lecture-list">
-     <?php
+   <?php
      foreach ( $lecData as $lect ){
-		if($lect[0] == $_GET['subjId']){
-		  echo "<li title='".$lect[2]."'><a href=\"/nptel/DisplayVideo/".$lect[0]."/".$lect[1]."\">".$lect[2]."</li>";
+      if($lect[0] == $_GET['subjId']){
+        echo "<li title='".$lect[2]."'><a href=\"/nptel/DisplayVideo/".$lect[0]."/".$lect[1]."\">".$lect[2]."</a></li>";
 		}
 	  }
      ?>

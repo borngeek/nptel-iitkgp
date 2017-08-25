@@ -135,26 +135,31 @@ if(!isset($_GET["dscId"])){
    <div id="header">
     <img src="/nptel/img/banner500x100.png">
     <div class="heading">
-      <h4>NPTEL - Web and Video Courses</h4>
+      <h4>NPTEL - <?php 
+        if($action === "showmainpage"){echo "Disciplines";}
+        elseif ($action == "showsubjectpage"){echo "Courses";}
+      ?></h4>
       <h6><?php 
         if($action === "showmainpage"){echo "<a href=\"".$_SERVER['REQUEST_URI']."\">Home</a>";}
         elseif ($action == "showsubjectpage"){echo "<a href=\"/nptel/\">Home</a> &gt;&gt;
           <a href=\"".$_SERVER['REQUEST_URI']."\">".$dsc["Name"]."</a>";}
       ?></h6>
-    </div>
+     </div>
      <div class="college-name">
        ABC Institute of Technology
      </div>
     </div>
    </div>
-  </div>
   <ul class="main-panel">
     <?php
+        $fndFlg = false;
         if($action == "showmainpage"){
           foreach ( $dscArray as $dsc ){
             echo ("<li class='discp'><a href='".$dsc["id"]."'>
               <img src=\"/nptel/img/".$dsc["id"].".jpg\" onerror=\"this.src='/nptel/img/BSc.jpg';\"/><div class='text'>".$dsc["Name"]."</div></a></li>");
+            $fndFlg = true;
           }
+          if($fndFlg == false){echo "<h3 align='center'>Disciples not Found.</h3>";}
         } elseif ($action == "showsubjectpage"){
           foreach ( $subjArray as $subj ){
             //var_dump($subjArray); exit;
@@ -163,8 +168,10 @@ if(!isset($_GET["dscId"])){
               foreach($subj[5] as $l){$str .= $l.', ';}
               $str = rtrim($str, ", ");
               echo $str."</div></a>";
+              $fndFlg = true;
             }
           }
+          if($fndFlg == false){echo "<h3 align='center'>Courses not Found.</h3>";}
         }
     ?>
   </ul>
