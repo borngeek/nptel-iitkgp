@@ -110,7 +110,7 @@ if(!isset($_GET["dscId"])){
     border-radius: 3px;
   }
   .main-panel .discp img{
-    padding: 5px;
+    padding-top: 5px;
     min-width: 130px;
     min-height: 130px;
     max-width: 380px;

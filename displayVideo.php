@@ -90,14 +90,13 @@
     overflow-y: scroll;
   }
   .video-page-main-panel .lecture-list li{
-    height: 24px;
-    padding: 5px;
+    height: 40px;
     background-color: #a90909;
-    border-color: #fff;
     color: #fff;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 1px #fff solid;
   }
   .video-page-main-panel .lecture-list li a{
     color: #fff;
