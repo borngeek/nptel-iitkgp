@@ -75,6 +75,20 @@ if(!isset($_GET["dscId"])){
   #header .heading h6{
     border-top: 1px #000 solid;
   }
+  #header .college-name{
+    display: inline-block;
+    height: 45px;
+    font-size: 9pt;
+    line-height: 45px;
+    vertical-align: middle;
+    padding-right: 10px;
+    padding-left: 10px;
+    float:right;
+    font-style:italic;
+    border: 1px dashed #000;
+    background-color: aqua;
+    border-radius: 5px;
+  }		
   .main-panel{
     margin-top: 65px;
     min-width: 480px;
@@ -128,6 +142,9 @@ if(!isset($_GET["dscId"])){
           <a href=\"".$_SERVER['REQUEST_URI']."\">".$dsc["Name"]."</a>";}
       ?></h6>
     </div>
+     <div class="college-name">
+       ABC Institute of Technology
+     </div>
     </div>
    </div>
   </div>

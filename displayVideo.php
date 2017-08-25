@@ -73,7 +73,7 @@
     font-style:italic;
     border: 1px dashed #000;
     background-color: aqua;
-	border-radius: 5px;
+    border-radius: 5px;
   }
   .video-page-main-panel{
     margin-top: 65px;
@@ -126,8 +126,8 @@
      </h6>
     </div>
     <div class="college-name">
-		ABC Institute of Technology
-	</div>
+     ABC Institute of Technology
+    </div>
    </div>
   </div>
   <div class="video-page-main-panel">
