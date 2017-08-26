@@ -87,8 +87,11 @@ if(!isset($_GET["dscId"])){
     font-style:italic;
     border: 1px dashed #000;
     background-color: aqua;
-    border-radius: 5px;
-  }		
+  }
+  #header .college-name	p{
+    line-height: 45px;
+    vertical-align: middle;
+  }
   .main-panel{
     margin-top: 65px;
     min-width: 480px;
@@ -146,7 +149,9 @@ if(!isset($_GET["dscId"])){
       ?></h6>
      </div>
      <div class="college-name">
-       ABC Institute of Technology
+     <?php
+      $college = json_decode(file_get_contents ("college.json"), true);
+      echo $college["college-name"]; ?>
      </div>
     </div>
    </div>

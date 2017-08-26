@@ -125,7 +125,9 @@
      </h6>
     </div>
     <div class="college-name">
-     ABC Institute of Technology
+    <?php
+     $college = json_decode(file_get_contents ("college.json"), true);
+     echo $college["college-name"]; ?>
     </div>
    </div>
   </div>
