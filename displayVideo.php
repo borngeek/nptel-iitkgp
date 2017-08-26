@@ -65,15 +65,15 @@
     display: inline-block;
     height: 45px;
     font-size: 9pt;
-    line-height: 45px;
+    line-height: 22px;
     vertical-align: middle;
-    padding-right: 10px;
-    padding-left: 10px;
-    float:right;
-    font-style:italic;
+    padding-right: 15px;
+    padding-left: 15px;
+    float: right;
+    font-style: normal;
     border: 1px dashed #000;
-    background-color: aqua;
-    border-radius: 5px;
+    font-family: "Arial Narrow";
+    color: #2a8318;
   }
   .video-page-main-panel{
     margin-top: 65px;
@@ -125,6 +125,7 @@
      </h6>
     </div>
     <div class="college-name">
+    Brought to you by:<br>
     <?php
      $college = json_decode(file_get_contents ("college.json"), true);
      echo $college["college-name"]; ?>

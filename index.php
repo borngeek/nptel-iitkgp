@@ -79,18 +79,15 @@ if(!isset($_GET["dscId"])){
     display: inline-block;
     height: 45px;
     font-size: 9pt;
-    line-height: 45px;
+    line-height: 22px;
     vertical-align: middle;
-    padding-right: 10px;
-    padding-left: 10px;
-    float:right;
-    font-style:italic;
+    padding-right: 15px;
+    padding-left: 15px;
+    float: right;
+    font-style: normal;
     border: 1px dashed #000;
-    background-color: aqua;
-  }
-  #header .college-name	p{
-    line-height: 45px;
-    vertical-align: middle;
+    font-family: "Arial Narrow";
+    color: #2a8318;
   }
   .main-panel{
     margin-top: 65px;
@@ -148,7 +145,7 @@ if(!isset($_GET["dscId"])){
           <a href=\"".$_SERVER['REQUEST_URI']."\">".$dsc["Name"]."</a>";}
       ?></h6>
      </div>
-     <div class="college-name">
+     <div class="college-name">Brought to you by:<br>
      <?php
       $college = json_decode(file_get_contents ("college.json"), true);
       echo $college["college-name"]; ?>
