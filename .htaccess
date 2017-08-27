@@ -1,6 +1,7 @@
 <IfModule mod_rewrite.c>
 	RewriteEngine on
 	Options +FollowSymLinks
+	RewriteRule ^/?DisplayVideo/?$ index.php
 	RewriteRule ^/?DisplayVideo/([a-zA-Z0-9]+)/?$ displayVideo.php?subjId=$1
 	RewriteRule ^/?DisplayVideo/([a-zA-Z0-9]+)/([a-zA-Z0-9]+)/?$ displayVideo.php?subjId=$1&lecId=$2
 	RewriteRule ^/?([a-zA-Z0-9]+)/?$ index.php?dscId=$1

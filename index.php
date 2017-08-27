@@ -1,4 +1,7 @@
 <?php
+if($_SERVER['REQUEST_URI'] == "/nptel/DisplayVideo/" || $_SERVER['REQUEST_URI'] == "/nptel/DisplayVideo"){
+  header("location: /nptel/");
+}
 $dir = scandir("json_db", SCANDIR_SORT_ASCENDING);
 $dscArray = array();
 foreach($dir as $filename){
