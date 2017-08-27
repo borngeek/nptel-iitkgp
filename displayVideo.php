@@ -1,12 +1,20 @@
 <?php
   $lecJson = file_get_contents ('json_db/dbLectureList1.json');
   $lecData = json_decode($lecJson, true);
+  $foundFlag = false;
   foreach ( $lecData as $lec ){
     if(isset($_GET['lecId'])){
-      if($lec[1] == $_GET['lecId'] && $lec[0] == $_GET['subjId']){break;}
-    }elseif(!isset($_GET['lecId'])){
-      if($lec[0] == $_GET['subjId']){break;}
+      if( $lec[0] == $_GET['subjId'] && $lec[1] == $_GET['lecId']){$foundFlag = true; break;}
+    }elseif(!isset($_GET['lecId']) || $foundFlag = false){
+      if($lec[0] == $_GET['subjId']){$foundFlag = true; break;}
     }
+  }
+  if ($foundFlag == false){
+    header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found", true, 404);
+    http_response_code(404);
+    $c = file_get_contents ("http://".$_SERVER['SERVER_NAME']."/nptel/error.php/?status=404");
+    echo $c;
+    exit();
   }
   $subData = file_get_contents ('json_db/dbSubjectList1.json');
   $subJson = json_decode($subData, true);
@@ -24,8 +32,8 @@
 <html>
  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Display Video</title>
   <link href="/nptel/img/favicon.ico" rel="shortcut icon">
+  <title>Display Video</title>
   <style>
   .container{
     position:absolute;

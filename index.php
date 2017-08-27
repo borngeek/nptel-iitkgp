@@ -1,21 +1,20 @@
 <?php
-
 $dir = scandir("json_db", SCANDIR_SORT_ASCENDING);
 $dscArray = array();
 foreach($dir as $filename){
-	if(preg_match("/dbDisciplineList[0-9]*\.json/", $filename, $mDl)){
-		$dscArray = array_merge($dscArray, json_decode(file_get_contents ("json_db/".$mDl[0]), true));
-	}
+  if(preg_match("/dbDisciplineList[0-9]*\.json/", $filename, $mDl)){
+    $dscArray = array_merge($dscArray, json_decode(file_get_contents ("json_db/".$mDl[0]), true));
+  }
 }
 $action = "";
+$foundFlg = false;
 if(!isset($_GET["dscId"])){
   $action = "showmainpage";
 }elseif(isset($_GET["dscId"])){
-  $foundFlg = 0;
   foreach ( $dscArray as $dsc ){
-    if ($_GET["dscId"] === $dsc["id"]){$foundFlg = 1;break;}
+    if ($_GET["dscId"] === $dsc["id"]){$foundFlg = true;break;}
   }
-  if($foundFlg == 1){
+  if($foundFlg == true){
     $subjArray = array();
     $lecArray = array();
     foreach($dir as $filename){
@@ -26,6 +25,8 @@ if(!isset($_GET["dscId"])){
         }
     }
     $action = "showsubjectpage";
+  }elseif($foundFlg == false){
+    header("location: ./");
   }
 }
 ?>

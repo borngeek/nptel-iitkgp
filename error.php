@@ -2,6 +2,7 @@
 <html>
  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link href="/nptel/img/favicon.ico" rel="shortcut icon">
   <title>Display Video</title>
   <style>
   .container{
@@ -34,6 +35,20 @@
   #header .heading h6{
     border-top: 1px #000 solid;
   }
+  #header .college-name{
+    display: inline-block;
+    height: 45px;
+    font-size: 9pt;
+    line-height: 22px;
+    vertical-align: middle;
+    padding-right: 15px;
+    padding-left: 15px;
+    float: right;
+    font-style: normal;
+    border: 1px dashed #000;
+    font-family: "Arial Narrow";
+    color: #2a8318;
+  }
   .message{
     margin-top: 75px;
     text-align: center;
@@ -55,6 +70,11 @@
 		    }
 		  ?></h4>
 		<h6></h6>
+    </div>
+    <div class="college-name">Brought to you by:<br>
+     <?php
+     $college = json_decode(file_get_contents ("college.json"), true);
+     echo $college["college-name"]; ?>
     </div>
    </div>
   </div>
