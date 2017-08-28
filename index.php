@@ -22,6 +22,7 @@ if(!isset($_GET["dscId"])){
     $lecArray = array();
     foreach($dir as $filename){
       if(preg_match("/dbSubjectList[0-9]*\.json/", $filename, $mSl)){
+//    var_dump(file_get_contents ("json_db/".$mSl[0]), true);exit;
         $subjArray = array_merge($subjArray, json_decode(file_get_contents ("json_db/".$mSl[0]), true));
 //      }elseif(preg_match("/dbLectureList[0-9]*\.json/", $filename, $mLl)){
 //        $lecArray = array_merge($lecArray, json_decode(file_get_contents ("json_db/".$mLl[0]), true));
@@ -168,7 +169,6 @@ if(!isset($_GET["dscId"])){
           if($fndFlg == false){echo "<h3 align='center'>Disciples not Found.</h3>";}
         } elseif ($action == "showsubjectpage"){
           foreach ( $subjArray as $subj ){
-            //var_dump($subjArray); exit;
             if ($subj[1] === $dsc["id"]){
               $str = "<a href='DisplayVideo/".$subj[0]."' class='course'><div class='text'>".$subj[0]."<br>".$subj[4]."</div><div class='text' style='vertical-align:bottom'>".$subj[3]."<br>";
               foreach($subj[5] as $l){$str .= $l.', ';}
