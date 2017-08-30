@@ -105,7 +105,7 @@ if(!isset($_GET["dscId"])){
     min-height: 200px;
     max-width: 300px;
     max-height: 400px;
-    width: calc(100vw/5) - 10;
+    width: calc(100vw/5);
     margin: 4px;
     font-family: "verdana";
     font-size: 9pt;
@@ -131,7 +131,6 @@ if(!isset($_GET["dscId"])){
     min-width: 130px;
     max-width: 380px;
     width: calc(100vw/6);
-    height: 30px;
   }
   </style>
  </head>
@@ -162,8 +161,7 @@ if(!isset($_GET["dscId"])){
         $fndFlg = false;
         if($action == "showmainpage"){
           foreach ( $dscArray as $dsc ){
-            echo ("<li class='discp'><a href='".$dsc["id"]."'>
-              <img src=\"/nptel/img/".$dsc["id"].".jpg\" onerror=\"this.src='/nptel/img/BSc.jpg';\"/><div class='text'>".$dsc["Name"]."</div></a></li>");
+            echo ("<li class='discp'><a href='".$dsc["id"]."'><img src=\"/nptel/img/".$dsc["id"].".jpg\" onerror=\"this.src='/nptel/img/BSc.jpg';\"/><div class='text'>".$dsc["Name"]."</div></a></li>");
             $fndFlg = true;
           }
           if($fndFlg == false){echo "<h3 align='center'>Disciples not Found.</h3>";}
